@@ -1,0 +1,14 @@
+# Instalar a biblioteca PyPDF2
+import PyPDF2
+
+# Imprimindo arquivo no modo leitura, lendo o binário.
+Arquivo_PDF = open(
+    'C:/Users/Cliente/OneDrive - RR Advogados/Área de Trabalho/Arquivo teste/Pagina Teste.pdf', 'rb')
+# Após pegar o binário, pegamos os dados do PDF desse binário
+Dados_PDF = PyPDF2.PdfFileReader(Arquivo_PDF)
+# Número presente de páginas no PDF
+print("Numero de Páginas " + str(Dados_PDF.numPages))
+Pagina1 = Dados_PDF.getPage(0)
+Texto_da_Pagina1 = Pagina1.extract_text()
+
+print(Texto_da_Pagina1)
